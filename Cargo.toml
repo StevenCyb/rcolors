@@ -1,0 +1,8 @@
+[package]
+name = "rcolors"
+authors = ["Steven Cyb <41087154+StevenCyb@users.noreply.github.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+atty = "0.2.14"
