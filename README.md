@@ -1,6 +1,8 @@
 # Colors
-[![Build Status](https://travis-ci.org/stevencyb/rcolors.svg?branch=master)](https://travis-ci.org/stevencyb/rcolors)
+![CC0 licensed](https://img.shields.io/github/license/stevencyb/rcolors)
+[![Build Status](https://travis-ci.org/stevencyb/rcolors.svg?branch=main)](https://travis-ci.org/stevencyb/rcolors)
 [![docs.rs](https://docs.rs/rcolors/badge.svg)](https://docs.rs/subprocess)
+[![Coverage Status](https://coveralls.io/repos/github/stevencyb/rcolors/badge.svg?branch=main)](https://coveralls.io/github/stevencyb/rcolors?branch=main)
 
 Color lets you use styled outputs in terms of [ANSI Escape
 Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Rust. 
