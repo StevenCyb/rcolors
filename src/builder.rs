@@ -1055,6 +1055,7 @@ mod builder_tests {
     #[test]
     fn display_with_color() {
         let mut builder = Builder::new();
+        builder.force_color = true;
         builder.text("Hello, ").bold().text("world!").reset();
         assert_eq!(format!("{}", builder), "Hello, \x1b[1mworld!\x1b[0m");
     }
