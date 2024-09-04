@@ -1,8 +1,16 @@
 [package]
 name = "rcolors"
-authors = ["Steven Cyb <41087154+StevenCyb@users.noreply.github.com>"]
+description = "A simple terminal colorization/style tool written in Rust."
+homepage = "https://github.com/StevenCyb/rcolors"
+repository = "https://github.com/StevenCyb/rcolors"
+readme = "README.md"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
+exclude = [
+    ".github/*",
+    ".vscode/*",
+]
 
 [dependencies]
 atty = "0.2.14"

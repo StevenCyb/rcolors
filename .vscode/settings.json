@@ -1,6 +1,8 @@
 {
   "cSpell.words": [
+    "clippy",
     "println",
-    "rcolors"
+    "rcolors",
+    "rustfmt"
   ]
 }

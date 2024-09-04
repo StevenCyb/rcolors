@@ -1,9 +1,12 @@
-# Colors
+# RColors
+[![Crates.io](https://img.shields.io/crates/v/rcolors.svg)](https://crates.io/crates/rcolors)
 ![CC0 licensed](https://img.shields.io/github/license/StevenCyb/rcolors)
-[![Build Status](https://travis-ci.org/StevenCyb/rcolors.svg?branch=main)](https://travis-ci.org/StevenCyb/rcolors)
-[![Coverage Status](https://coveralls.io/repos/github/StevenCyb/rcolors/badge.svg?branch=main)](https://coveralls.io/github/StevenCyb/rcolors?branch=main)
+[![Tests](https://github.com/StevenCyb/rcolors/actions/workflows/tests.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/tests.yml)
+[![Clippy](https://github.com/StevenCyb/rcolors/actions/workflows/lint.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/lint.yml)
+[![Rustfmt](https://github.com/StevenCyb/rcolors/actions/workflows/rustfmt.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/rustfmt.yml)
+[![Release](https://github.com/StevenCyb/rcolors/actions/workflows/release.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/release.yml)
 
-Color lets you use styled outputs in terms of [ANSI Escape
+RColor lets you use styled outputs in terms of [ANSI Escape
 Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Rust. 
 
 <img src=".media/thumbnail.jpg" width="600px">
@@ -41,6 +44,6 @@ fn main() {
         .fg_cyan().italic().text("********\n")
         // .print();
         // .println();
-        .to_string();
+        .as_string();
 }
 ```
