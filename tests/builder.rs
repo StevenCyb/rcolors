@@ -5,19 +5,19 @@ mod builder_tests {
     #[test]
     fn builder_to_string() {
         let mut builder = Builder::new();
-        builder.bg_black().text("text").reset();
+        builder.bg_black().text("text").reset().force_color();
 
         assert_eq!(builder.to_string(), "\x1b[40mtext\x1b[0m");
     }
 
     #[test]
     fn builder_print() {
-        Builder::new().bg_black().text("text").reset().print();
+        Builder::new().bg_black().text("text").reset().force_color().print();
     }
 
     #[test]
     fn builder_thumbnail() {
-        Builder::new()
+        Builder::new().force_color()
             // Color: an ANSI color package for Rust
             .fg_green()
             .text("Color: ")

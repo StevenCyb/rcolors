@@ -54,6 +54,13 @@ impl Builder {
         }
     }
 
+    // This function is for testing purposes only.
+    #[doc(hidden)]
+    pub fn force_color(&mut self) -> &mut Self {
+        self.force_color = true;
+        self
+    }
+
     /// Appends text to the builder.
     ///
     /// # Examples
