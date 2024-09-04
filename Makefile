@@ -21,4 +21,9 @@ run:
 release:
 	cargo build --release
 
+publish:
+	cargo publish --dry-run
+	cargo package --list
+	cargo publish
+
 all: format lint test run
