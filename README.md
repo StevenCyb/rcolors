@@ -1,5 +1,5 @@
 # RColors
-[![Crates.io](https://img.shields.io/crates/v/rcolor.svg)](https://crates.io/crates/rcolor)
+[![Crates.io](https://img.shields.io/crates/v/rcolors.svg)](https://crates.io/crates/rcolors)
 ![CC0 licensed](https://img.shields.io/github/license/StevenCyb/rcolors)
 [![Tests](https://github.com/StevenCyb/rcolors/actions/workflows/tests.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/tests.yml)
 [![Clippy](https://github.com/StevenCyb/rcolors/actions/workflows/lint.yml/badge.svg)](https://github.com/StevenCyb/rcolors/actions/workflows/lint.yml)
