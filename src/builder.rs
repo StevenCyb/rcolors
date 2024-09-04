@@ -26,6 +26,7 @@ pub enum Entity {
 pub struct Builder {
     content: Vec<Entity>,
     no_color: bool,
+    force_color: bool,
 }
 
 impl Display for Builder {
@@ -49,6 +50,7 @@ impl Builder {
         Self {
             content: Vec::new(),
             no_color: utils::no_color(),
+            force_color: false,
         }
     }
 
@@ -116,7 +118,7 @@ impl Builder {
     /// ```
     pub fn to_string(&self) -> String {
         let mut content = String::new();
-        if self.no_color {
+        if self.no_color && !self.force_color {
             for entity in &self.content {
                 match entity {
                     Entity::Text(text) => content.push_str(text),
@@ -1120,6 +1122,7 @@ mod builder_tests {
     #[test]
     fn builder_print() {
         let mut builder = Builder::new();
+        builder.force_color = true;
         builder.text("Hello, ").bold().text("world!").reset();
         // Redirect stdout for testing
         let output = std::io::stdout();
@@ -1129,8 +1132,21 @@ mod builder_tests {
     }
 
     #[test]
+    fn builder_println() {
+        let mut builder = Builder::new();
+        builder.force_color = true;
+        builder.text("Hello, ").bold().text("world!").reset();
+        // Redirect stdout for testing
+        let output = std::io::stdout();
+        let mut handle = output.lock();
+        builder.println();
+        assert_eq!(handle.write(b"Hello, \x1b[1mworld!\x1b[0m\n").is_ok(), true);
+    }
+
+    #[test]
     fn builder_to_string() {
         let mut builder = Builder::new();
+        builder.force_color = true;
         builder.text("Hello, ").bold().text("world!").reset();
         assert_eq!(builder.to_string(), "Hello, \u{1b}[1mworld!\u{1b}[0m");
     }
