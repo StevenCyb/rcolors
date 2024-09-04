@@ -3,7 +3,7 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +16,16 @@ jobs:
           override: true
       - name: Run clippy
         run: make test
-      - uses: Swatinem/fucov@v1
+  cover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+          components: llvm-tools-preview
+      - uses: Swatinem/fucov@v2
       - uses: codecov/codecov-action@v1
         with:
           directory: coverage
-  

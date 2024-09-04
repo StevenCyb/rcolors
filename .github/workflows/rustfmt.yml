@@ -3,7 +3,7 @@ name: Rustfmt
 on: [push, pull_request]
 
 jobs:
-  build:
+  fmt:
     runs-on: ubuntu-latest
 
     steps:
