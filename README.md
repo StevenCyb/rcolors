@@ -1,9 +1,9 @@
-# Colors
+# RColors
 ![CC0 licensed](https://img.shields.io/github/license/StevenCyb/rcolors)
 [![Build Status](https://travis-ci.org/StevenCyb/rcolors.svg?branch=main)](https://travis-ci.org/StevenCyb/rcolors)
 [![Coverage Status](https://coveralls.io/repos/github/StevenCyb/rcolors/badge.svg?branch=main)](https://coveralls.io/github/StevenCyb/rcolors?branch=main)
 
-Color lets you use styled outputs in terms of [ANSI Escape
+RColor lets you use styled outputs in terms of [ANSI Escape
 Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Rust. 
 
 <img src=".media/thumbnail.jpg" width="600px">
@@ -41,6 +41,6 @@ fn main() {
         .fg_cyan().italic().text("********\n")
         // .print();
         // .println();
-        .to_string();
+        .as_string();
 }
 ```

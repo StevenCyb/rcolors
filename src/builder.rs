@@ -31,8 +31,14 @@ pub struct Builder {
 
 impl Display for Builder {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.to_string())?;
+        write!(f, "{}", self.as_string())?;
         Ok(())
+    }
+}
+
+impl Default for Builder {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -123,7 +129,7 @@ impl Builder {
     /// builder.text("Hello, world!").bold().text(" This is bold text!").reset();
     /// assert_eq!(builder.to_string(), "Hello, world! This is bold text!");
     /// ```
-    pub fn to_string(&self) -> String {
+    pub fn as_string(&self) -> String {
         let mut content = String::new();
         if self.no_color && !self.force_color {
             for entity in &self.content {
@@ -134,7 +140,7 @@ impl Builder {
             }
             return content;
         }
-        if self.content.get(self.content.len() - 1) != Some(&Entity::Ansi(Ansi::Reset)) {
+        if self.content.last() != Some(&Entity::Ansi(Ansi::Reset)) {
             content.push_str(&Ansi::Reset.to_string());
         }
         for entity in &self.content {
@@ -1156,6 +1162,6 @@ mod builder_tests {
         let mut builder = Builder::new();
         builder.force_color = true;
         builder.text("Hello, ").bold().text("world!").reset();
-        assert_eq!(builder.to_string(), "Hello, \u{1b}[1mworld!\u{1b}[0m");
+        assert_eq!(builder.as_string(), "Hello, \u{1b}[1mworld!\u{1b}[0m");
     }
 }
